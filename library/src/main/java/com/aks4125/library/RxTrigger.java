@@ -1,4 +1,4 @@
-package com.android.aks4125.rxtrigger.trigger;
+package com.aks4125.library;
 
 import io.reactivex.Observable;
 import io.reactivex.subjects.PublishSubject;

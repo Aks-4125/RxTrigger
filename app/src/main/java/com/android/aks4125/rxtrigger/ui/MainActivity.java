@@ -11,12 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.android.aks4125.rxtrigger.App;
 import com.android.aks4125.rxtrigger.R;
-import com.android.aks4125.rxtrigger.trigger.Trigger;
+import com.aks4125.library.Trigger;
 import com.android.aks4125.rxtrigger.ui.fragments.FragmentOne;
 import com.android.aks4125.rxtrigger.ui.fragments.FragmentThree;
 import com.android.aks4125.rxtrigger.ui.fragments.FragmentTwo;
@@ -88,7 +87,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
