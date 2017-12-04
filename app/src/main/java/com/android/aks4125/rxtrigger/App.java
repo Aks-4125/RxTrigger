@@ -2,7 +2,7 @@ package com.android.aks4125.rxtrigger;
 
 import android.app.Application;
 
-import com.android.aks4125.rxtrigger.trigger.RxTrigger;
+import com.aks4125.library.RxTrigger;
 
 /**
  * Created by akashb on 14-11-2017.
@@ -11,7 +11,6 @@ import com.android.aks4125.rxtrigger.trigger.RxTrigger;
 public class App extends Application {
 
     private RxTrigger rxTrigger;
-    private App mApp;
 
     public App getApp() {
         return (App) getApplicationContext();
