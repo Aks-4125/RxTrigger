@@ -7,24 +7,20 @@ jobs:
   build:
     working_directory: ~/src
     docker:
-      - image: circleci/android:api-26-alpha
+      - image: circleci/android:api-25-alpha
     environment:
       JVM_OPTS: -Xmx3200m
-   dependencies:
-   override:
-   - echo y | android update sdk --no-ui --all --filter build-tools-26.0.2,android-26
+#   dependencies:
+#   override:
+#   - echo y | android update sdk --no-ui --all --filter build-tools-26.0.2,android-26
 
     steps:
       - checkout
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-
-
-   - run:
+      - run:
          name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
          command: sudo chmod +x ./gradlew
-
-
       - run:
           name: Download Dependencies
           command: export TERM=xterm && ./gradlew androidDependencies
