@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.aks4125.rxtrigger.App;
 import com.android.aks4125.rxtrigger.R;
@@ -151,6 +152,7 @@ public class MainActivity extends AppCompatActivity
             tvTitle.setText("Fragment 3");
 
         } else if (id == R.id.nav_manage) {
+            Toast.makeText(mApp, "manage", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.nav_share) {
 
