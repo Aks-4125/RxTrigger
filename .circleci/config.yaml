@@ -10,13 +10,15 @@ jobs:
       - image: circleci/android:api-26-alpha
     environment:
       JVM_OPTS: -Xmx3200m
+   dependencies:
+   override:
+   - echo y | android update sdk --no-ui --all --filter build-tools-26.0.2,android-26
+
     steps:
       - checkout
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-    - run:
-          name: Approve license for build tools
-         command: yes | sdkmanager --licenses && sdkmanager --update
+
 
    - run:
          name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
